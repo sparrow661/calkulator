@@ -1,20 +1,20 @@
 import java.util.Scanner;
 class calculator {
 static Scanner sc  = new Scanner (System.in );
-static  int operand1, operand2;
+static  int vvod1, vvod2;
 static int result;
 
 public static void main (String[] args) throws Exception {
-        String[] input = sc.nextLine().split(" ");
-        if (input.length != 3) {
+        String[] inp = sc.nextLine().split(" ");
+        if (inp.length != 3) {
         throw new Exception("Два операнда и один оператор (+,-,*,/)");
         }
-        if (input [0].equals ("I") || input [0].equals("II") || input [0].equals("III") || input [0].equals("IV") || input [0].equals("V") || input [0]. equals ("VI") || input [0]. equals ("VII") || input [0]. equals ("VIII") || input [0]. equals ("IX") || input[0].equals ("X") && input[2]. equals ("I") || input[2]. equals ("II") || input[2]. equals ("III") || input[2].equals ("IV") || input [2]. equals ("V") || input [2]. equals ("VI") || input [2]. equals ("VII") || input [2]. equals ("VIII") || input [2].equals("IX") || input [2].equals("X")) {
-        operand1  = romanToArab(input [0]);
-        operand2 = romanToArab(input [2]);
+        if (inp [0].equals ("I") || inp [0].equals("II") || inp [0].equals("III") || inp [0].equals("IV") || inp [0].equals("V") || inp [0]. equals ("VI") || inp [0]. equals ("VII") || inp [0]. equals ("VIII") || inp [0]. equals ("IX") || inp[0].equals ("X") && inp[2]. equals ("I") || inp[2]. equals ("II") || inp[2]. equals ("III") || inp[2].equals ("IV") || inp [2]. equals ("V") || inp [2]. equals ("VI") || inp [2]. equals ("VII") || inp [2]. equals ("VIII") || inp [2].equals("IX") || inp [2].equals("X")) {
+        vvod1 = convertRomanToArab(inp [0]);
+        vvod2 = convertRomanToArab(inp [2]);
 
-        if (operand1 > 0 && operand1 < 11 && operand2 > 0 && operand2 < 11) {
-        result = calc(operand1, 2, input [1]);
+        if (vvod1 > 0 && vvod1 < 11 && vvod2 > 0 && vvod2 < 11) {
+        result = calc(vvod1, 2, inp [1]);
         if (result> 0) {
         String resultRomanNum = convertArabToRoman(result);
         System.out.println(resultRomanNum);
@@ -23,10 +23,10 @@ public static void main (String[] args) throws Exception {
         }
         }
         } else {
-        operand1  = Integer.parseInt(input [0]);
-        operand2 = Integer.parseInt(input [2]);
-        if (operand1 < 11 && operand1 > 0 && operand2 < 11 && operand2 > 0) {
-        result = calc(operand1, operand2, input[1]);
+        vvod1 = Integer.parseInt(inp [0]);
+        vvod2 = Integer.parseInt(inp [2]);
+        if (vvod1 < 11 && vvod1 > 0 && vvod2 < 11 && vvod2 > 0) {
+        result = calc(vvod1, vvod2, inp[1]);
         System.out.println(result);
         } else {
         throw new Exception("Вводить нужно только от 1 до 10 включительно!");
@@ -34,7 +34,7 @@ public static void main (String[] args) throws Exception {
         }
         }
 
-static int romanToArab(String str) throws Exception {
+static int convertRomanToArab(String str) throws Exception {
         if (str.equals("I") || str.equals("II") || str.equals("III") || str.equals("IV") || str.equals("V") || str.equals("VI") || str.equals("VII") || str.equals("VIII") || str.equals("IX") || str.equals("X")) {
         switch (str) {
         case "I":
