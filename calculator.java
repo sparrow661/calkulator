@@ -14,7 +14,7 @@ public static void main (String[] args) throws Exception {
         vvod2 = convertRomanToArab(inp [2]);
 
         if (vvod1 > 0 && vvod1 < 11 && vvod2 > 0 && vvod2 < 11) {
-        result = calc(vvod1, 2, inp [1]);
+        result = calc(vvod1, vvod2, inp [1]);
         if (result> 0) {
         String resultRomanNum = convertArabToRoman(result);
         System.out.println(resultRomanNum);
